@@ -1,4 +1,6 @@
-package com.form;
+package com.gui.calulation;
+
+import com.gui.utilities.length.Length;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,12 +36,16 @@ public class Calculation extends JFrame {
     private JButton btnSum;
     private JButton btnResult;
     private JButton btnDiv;
+    private JButton lengthButton;
+    private JButton massButton;
+    private JButton volumeButton;
 
     Double num, ans;
     int cal;
 
     private void initComponents() {
         //setTitle("Kết quả:");
+
         this.setLocationRelativeTo(null);
         this.setContentPane(this.panel1);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -150,7 +156,6 @@ public class Calculation extends JFrame {
                 textField1.setText("");
                 textField2.setText(num + btnSum.getText());
 
-
             }
         });
         btnSub.addActionListener(new ActionListener() {
@@ -160,7 +165,6 @@ public class Calculation extends JFrame {
                 cal = 2;
                 textField1.setText("");
                 textField2.setText(num + btnSub.getText());
-
 
             }
         });
@@ -172,7 +176,6 @@ public class Calculation extends JFrame {
                 textField1.setText("");
                 textField2.setText(num + btnMul.getText());
 
-
             }
         });
         btnDiv.addActionListener(new ActionListener() {
@@ -183,7 +186,24 @@ public class Calculation extends JFrame {
                 textField1.setText("");
                 textField2.setText(num + btnDiv.getText());
 
+            }
+        });
 
+        btnPer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                num = Double.valueOf(textField1.getText()) / 100;
+                textField1.setText(num.toString());
+                //txtParam2.setText(num.toString());
+            }
+        });
+
+        lengthButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Length frm = new Length();
+                frm.setVisible(true);
+                dispose();
             }
         });
 
@@ -207,6 +227,7 @@ public class Calculation extends JFrame {
                 ans = num / Double.valueOf(textField1.getText());
                 textField1.setText(ans.toString());
                 break;
+
         }
     }
 

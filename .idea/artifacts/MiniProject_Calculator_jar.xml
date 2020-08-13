@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MiniProject-Calculator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MiniProject_Calculator_jar</output-path>
+    <root id="archive" name="MiniProject-Calculator.jar">
+      <element id="module-output" name="MiniProject-Calculator" />
+    </root>
+  </artifact>
+</component>
