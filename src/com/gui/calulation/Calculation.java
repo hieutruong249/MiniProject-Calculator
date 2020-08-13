@@ -1,6 +1,6 @@
 package com.gui.calulation;
 
-import com.gui.utilities.length.Length;
+import com.gui.utilities.length.frmLength;
 
 import javax.swing.*;
 import java.awt.*;
@@ -201,7 +201,7 @@ public class Calculation extends JFrame {
         lengthButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Length frm = new Length();
+                frmLength frm = new frmLength();
                 frm.setVisible(true);
                 dispose();
             }

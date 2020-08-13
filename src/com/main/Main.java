@@ -2,8 +2,6 @@ package com.main;
 
 import com.gui.calulation.Calculation;
 
-import java.text.DecimalFormat;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -16,5 +14,7 @@ public class Main {
         str = str.replaceAll("[^\\d.]", "");
         System.out.println(formatter.format(Double.valueOf(str)));
          **/
+
+
     }
 }

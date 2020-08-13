@@ -2,7 +2,11 @@ package com.pojo.utilities.length;
 
 public abstract class Length {
     protected String name;
-    private double value;
+    protected double value;
+
+    public Length() {
+        this.name = "";
+    }
 
     public double getValue() {
         return value;
