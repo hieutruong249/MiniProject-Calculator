@@ -1,6 +1,7 @@
 package com.gui.calulation;
 
 import com.gui.utilities.length.frmLength;
+import com.gui.utilities.mass.frmMass;
 
 import javax.swing.*;
 import java.awt.*;
@@ -207,6 +208,14 @@ public class Calculation extends JFrame {
             }
         });
 
+        massButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frmMass frm = new frmMass();
+                frm.setVisible(true);
+                dispose();
+            }
+        });
     }
 
     public void arithmetic_operation() {
