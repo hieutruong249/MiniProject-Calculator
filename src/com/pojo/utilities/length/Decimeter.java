@@ -3,6 +3,7 @@ package com.pojo.utilities.length;
 public class Decimeter extends Length{
     public Decimeter() {
         this.name = "Decimeter";
+        this.sign = "dm";
     }
 
     @Override

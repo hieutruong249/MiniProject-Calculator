@@ -3,6 +3,7 @@ package com.pojo.utilities.length;
 public class Meter extends Length{
     public Meter() {
         this.name = "Meter";
+        this.sign = "m";
     }
 
     @Override

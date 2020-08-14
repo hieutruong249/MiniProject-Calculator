@@ -3,6 +3,7 @@ package com.pojo.utilities.length;
 public class Milimeter extends Length{
     public Milimeter() {
         this.name = "Milemeter";
+        this.sign = "mm";
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.pojo.utilities.length;
 public class Centimeter extends Length {
     public Centimeter() {
         this.name = "Centimeter";
+        this.sign = "cm";
     }
 
     @Override

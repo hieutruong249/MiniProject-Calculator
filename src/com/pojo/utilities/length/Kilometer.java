@@ -3,6 +3,7 @@ package com.pojo.utilities.length;
 public class Kilometer extends Length {
     public Kilometer() {
         this.name = "Kilometer";
+        this.sign = "km";
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.pojo.utilities.length;
 
 public abstract class Length {
     protected String name;
+    protected String sign;
     protected double value;
 
     public Length() {
@@ -10,6 +11,14 @@ public abstract class Length {
 
     public double getValue() {
         return value;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSign() {
+        return sign;
     }
 
     public void setValue(double value) {
@@ -22,5 +31,8 @@ public abstract class Length {
     public abstract double convertCm();
     public abstract double convertMm();
 
-
+    @Override
+    public String toString() {
+        return getSign();
+    }
 }
