@@ -1,5 +1,6 @@
-package com.gui.utilities;
+package com.gui.utilities.volume;
 
+import com.gui.utilities.Utilities;
 import com.pojo.utilities.volume.CbCentimeter;
 import com.pojo.utilities.volume.CbMeter;
 import com.pojo.utilities.volume.Liter;
@@ -12,7 +13,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class frmVolume extends Utilities{
+public class frmVolume extends Utilities {
     List<Volume> listUnit = new ArrayList<>();
     Volume unit1, unit2 = null;
 
