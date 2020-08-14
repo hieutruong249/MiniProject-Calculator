@@ -62,19 +62,7 @@ public class frmMass extends Utilities {
 
             }
 
-            private double convert(Mass unit1, Mass unit2, Double value) {
-                Mass unit = null;
-
-                if (unit1 instanceof Tonne) {
-                    unit = new Tonne();
-                } else if (unit1 instanceof Kilogram) {
-                    unit = new Kilogram();
-                } else if (unit1 instanceof Gram) {
-                    unit = new Gram();
-                } else if (unit1 instanceof Miligram) {
-                    unit = new Miligram();
-                } else return value;
-
+            private double convert(Mass unit, Mass unit2, Double value) {
                 unit.setValue(value);
 
                 if (unit2 instanceof Tonne) return unit.convertTon();
