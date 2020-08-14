@@ -1,5 +1,6 @@
 package com.gui.calulation;
 
+import com.gui.utilities.frmVolume;
 import com.gui.utilities.length.frmLength;
 import com.gui.utilities.mass.frmMass;
 
@@ -212,6 +213,14 @@ public class Calculation extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frmMass frm = new frmMass();
+                frm.setVisible(true);
+                dispose();
+            }
+        });
+        volumeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frmVolume frm = new frmVolume();
                 frm.setVisible(true);
                 dispose();
             }

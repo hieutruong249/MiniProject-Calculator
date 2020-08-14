@@ -1,7 +1,10 @@
-package com.gui.utilities.mass;
+package com.gui.utilities;
 
-import com.gui.utilities.Utilities;
 import com.pojo.utilities.mass.*;
+import com.pojo.utilities.volume.CbCentimeter;
+import com.pojo.utilities.volume.CbMeter;
+import com.pojo.utilities.volume.Liter;
+import com.pojo.utilities.volume.Volume;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,12 +13,12 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class frmMass extends Utilities {
-    List<Mass> listUnit = new ArrayList<>();
-    Mass unit1, unit2 = null;
+public class frmVolume extends Utilities{
+    List<Volume> listUnit = new ArrayList<>();
+    Volume unit1, unit2 = null;
 
     protected void initComponents() {
-        setTitle("Mass converter");
+        setTitle("Volume converter");
         this.pack();
         this.setLocationRelativeTo(null);
         this.setContentPane(this.rootPanel);
@@ -23,17 +26,17 @@ public class frmMass extends Utilities {
     }
 
     public void initUnit() {
-        listUnit.add(new Tonne());
-        listUnit.add(new Kilogram());
-        listUnit.add(new Gram());
-        listUnit.add(new Miligram());
+        listUnit.add(new CbMeter());
+        listUnit.add(new CbCentimeter());
+        listUnit.add(new Liter());
+
     }
 
-    public frmMass() throws HeadlessException {
+    public frmVolume() throws HeadlessException {
         initComponents();
         initUnit();
 
-        for (Mass unit : listUnit) {
+        for (Volume unit : listUnit) {
             cbUnit1.addItem(unit);
             cbUnit2.addItem(unit);
         }
@@ -41,7 +44,7 @@ public class frmMass extends Utilities {
         cbUnit1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                unit1 = (Mass) cbUnit1.getSelectedItem();
+                unit1 = (Volume) cbUnit1.getSelectedItem();
                 lbUnit1.setText(unit1.getName());
 
             }
@@ -50,10 +53,11 @@ public class frmMass extends Utilities {
         cbUnit2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                unit2 = (Mass) cbUnit2.getSelectedItem();
+                unit2 = (Volume) cbUnit2.getSelectedItem();
                 lbUnit2.setText(unit2.getName());
             }
         });
+
         btnResult.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -62,25 +66,12 @@ public class frmMass extends Utilities {
 
             }
 
-            private double convert(Mass unit1, Mass unit2, Double value) {
-                Mass unit = null;
-
-                if (unit1 instanceof Tonne) {
-                    unit = new Tonne();
-                } else if (unit1 instanceof Kilogram) {
-                    unit = new Kilogram();
-                } else if (unit1 instanceof Gram) {
-                    unit = new Gram();
-                } else if (unit1 instanceof Miligram) {
-                    unit = new Miligram();
-                } else return value;
-
+            private double convert(Volume unit, Volume unit2, Double value) {
                 unit.setValue(value);
 
-                if (unit2 instanceof Tonne) return unit.convertTon();
-                else if (unit2 instanceof Kilogram) return unit.convertKg();
-                else if (unit2 instanceof Gram) return unit.convertG();
-                else if (unit2 instanceof Miligram) return unit.convertMg();
+                if (unit2 instanceof CbMeter) return unit.convertM3();
+                else if (unit2 instanceof CbCentimeter) return unit.convertCm3();
+                else if (unit2 instanceof Liter) return unit.convertL();
                 else
                     return unit.getValue();
             }
