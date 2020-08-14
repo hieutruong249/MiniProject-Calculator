@@ -1,6 +1,5 @@
 package com.gui.utilities;
 
-import com.pojo.utilities.mass.*;
 import com.pojo.utilities.volume.CbCentimeter;
 import com.pojo.utilities.volume.CbMeter;
 import com.pojo.utilities.volume.Liter;
@@ -18,11 +17,8 @@ public class frmVolume extends Utilities{
     Volume unit1, unit2 = null;
 
     protected void initComponents() {
+        super.initComponents();
         setTitle("Volume converter");
-        this.pack();
-        this.setLocationRelativeTo(null);
-        this.setContentPane(this.rootPanel);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public void initUnit() {
@@ -61,9 +57,10 @@ public class frmVolume extends Utilities{
         btnResult.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                double value = convert(unit1, unit2, Double.valueOf(txtParam1.getText()));
-                txtParam2.setText(formatter.format(value));
-
+                if(unit1 != null && unit2 !=null) {
+                    double value = convert(unit1, unit2, Double.valueOf(txtParam1.getText()));
+                    txtParam2.setText(formatter.format(value));
+                }
             }
 
             private double convert(Volume unit, Volume unit2, Double value) {

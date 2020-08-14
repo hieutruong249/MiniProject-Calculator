@@ -15,11 +15,9 @@ public class frmMass extends Utilities {
     Mass unit1, unit2 = null;
 
     protected void initComponents() {
+        super.initComponents();
         setTitle("Mass converter");
-        this.pack();
-        this.setLocationRelativeTo(null);
-        this.setContentPane(this.rootPanel);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
 
     public void initUnit() {
@@ -57,9 +55,10 @@ public class frmMass extends Utilities {
         btnResult.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                double value = convert(unit1, unit2, Double.valueOf(txtParam1.getText()));
-                txtParam2.setText(formatter.format(value));
-
+                if(unit1 != null && unit2 !=null) {
+                    double value = convert(unit1, unit2, Double.valueOf(txtParam1.getText()));
+                    txtParam2.setText(formatter.format(value));
+                }
             }
 
             private double convert(Mass unit, Mass unit2, Double value) {

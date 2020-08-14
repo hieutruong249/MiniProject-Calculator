@@ -33,12 +33,14 @@ public class Utilities extends JFrame {
     protected JButton btnResult;
 
     final protected DecimalFormat formatter = new DecimalFormat("#,###.###");
+
     protected void initComponents() {
-        //setTitle("Kết quả:");
         this.setLocationRelativeTo(null);
         this.setContentPane(this.rootPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
+
+        txtParam1.setText("0");
     }
 
     protected Utilities() throws HeadlessException {
